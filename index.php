@@ -8,8 +8,7 @@ $token = "xxxxxxxxxxxxxx"; //plex token
 
 //DONT CHANGE THESE PARAMETERS
 ini_set('display_errors',1);  error_reporting(E_ALL);
-if(!$_GET["act"]){ $_GET["act"]=recentlyAdded; }
-$act = $_GET["act"];
+$act = isset($_GET['act']) ? $_GET['act'] : 'recentlyAdded';
 $url = "$http://$host/library/sections/1/$act?X-Plex-Token=$token";
 $imgurl = "$http://$host/photo/:/transcode?url=";
 $imgurlend = "&width=100&height=100&X-Plex-Token=$token";
@@ -136,7 +135,7 @@ if (in_array($act, $actarray[0])) {unset($actarray[0] [array_search($act,$actarr
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">ï¿½</button>
 				<h4 class="modal-title"><?=$child['title'];?></h4>
 			</div>
 			<div class="modal-body">
